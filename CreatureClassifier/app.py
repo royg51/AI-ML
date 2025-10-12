@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import os
 
 # Load models
-model_path = os.path.join(os.path.dirname(__file__), 'hero_model.pkl')
+model_path = os.path.join(os.path.dirname(__file__), 'creature_kmeans_model_model.pkl')
 with open(model_path, 'rb') as file:
     model = pickle.load(file)
 
@@ -58,4 +58,5 @@ ax.set_title("K-Means Clustering on PCA-Reduced Data")
 ax.set_xlabel("Principal Component 1")
 ax.set_ylabel("Principal Component 2")
 ax.legend()
+
 st.pyplot(fig)
