@@ -5,14 +5,17 @@ import matplotlib.pyplot as plt
 import os
 
 # Load models
-model_path = os.path.join(os.path.dirname(__file__), 'creature_kmeans_model.pkl')
+base_path = os.path.dirname(__file__)
+model_path = os.path.join(base_path, 'creature_kmeans_model.pkl')
 with open(model_path, 'rb') as file:
     model = pickle.load(file)
 
-with open('creature_pca_model.pkl', 'rb') as file:
+pca_path = os.path.join(base_path, 'creature_pca_model.pkl')
+with open(pca_path, 'rb') as file:
     pca_model = pickle.load(file)
 
-with open('creature_scaler.pkl', 'rb') as file:
+scaler_path = os.path.join(base_path, 'creature_scaler.pkl')
+with open(scaler_path, 'rb') as file:
     scaler = pickle.load(file)
 
 st.title("Magical Creature Classifier")
@@ -58,6 +61,4 @@ ax.set_title("K-Means Clustering on PCA-Reduced Data")
 ax.set_xlabel("Principal Component 1")
 ax.set_ylabel("Principal Component 2")
 ax.legend()
-
 st.pyplot(fig)
-
