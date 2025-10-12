@@ -2,3 +2,4 @@ pandas
 numpy
 plotly.express
 streamlit
+scikit-learn
